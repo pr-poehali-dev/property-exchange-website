@@ -239,6 +239,61 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <Card className="border-2 border-primary/20 shadow-lg">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <CardTitle className="text-2xl mb-2">
+                      Игрок artem_nilla с 18 сервера
+                    </CardTitle>
+                    <Badge className="bg-purple-500">Сервер 18 → Сервер 21</Badge>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Ищет на 21 сервере:</h4>
+                  <p className="text-muted-foreground">
+                    Что-то интересное для обмена
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Предлагает в обмен:</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Home" size={18} className="text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span>Дом в новом поселке</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Building2" size={18} className="text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span>Квартира в южном</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Car" size={18} className="text-purple-600 mt-0.5 flex-shrink-0" />
+                      <span>Авто парк на 32кк</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t">
+                  <a 
+                    href="https://t.me/avenvert" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    <Icon name="MessageCircle" size={18} />
+                    @avenvert
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       <Dialog open={chatOpen} onOpenChange={setChatOpen}>
         <DialogContent className="max-w-2xl h-[600px] flex flex-col p-0">
           <DialogHeader className="px-6 py-4 border-b">
