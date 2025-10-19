@@ -192,10 +192,10 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
-              Обменивайте всё и везде
+              Обмен имуществом между серверами
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Присоединяйтесь к самой яркой площадке для обмена. Меняйте ненужные вещи на то, что вам нравится.
+              Платформа для безопасного обмена имуществом между серверами мобильной игры GRAD. Меняйте ресурсы, оружие и другие предметы с игроками из других миров.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8">
