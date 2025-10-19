@@ -306,24 +306,35 @@ const Index = () => {
               <CardContent className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Ищет на 36 сервере:</h4>
-                  <p className="text-muted-foreground">
-                    Оружие, бронежилеты, военное снаряжение
-                  </p>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Home" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Дом</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Users" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Семью</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Car" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Топ авто парк</span>
+                    </li>
+                  </ul>
                 </div>
                 <div>
                   <h4 className="font-semibold text-lg mb-2">Предлагает в обмен:</h4>
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <Icon name="Store" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
-                      <span>Бизнес в центре города</span>
+                      <span>Бизнес</span>
                     </li>
                     <li className="flex items-start gap-2">
-                      <Icon name="Warehouse" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
-                      <span>Склад с ресурсами</span>
+                      <Icon name="Building2" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Дом</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Icon name="Coins" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
-                      <span>45кк игровой валюты</span>
+                      <span>55кк игровой валюты</span>
                     </li>
                   </ul>
                 </div>
