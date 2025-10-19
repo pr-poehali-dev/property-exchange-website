@@ -30,54 +30,54 @@ type Message = {
 };
 
 const categories = [
-  { name: 'Electronics', icon: 'Smartphone', color: 'bg-purple-500' },
-  { name: 'Fashion', icon: 'Shirt', color: 'bg-pink-500' },
-  { name: 'Home & Garden', icon: 'Home', color: 'bg-orange-500' },
-  { name: 'Sports', icon: 'Bike', color: 'bg-blue-500' },
-  { name: 'Books', icon: 'BookOpen', color: 'bg-green-500' },
-  { name: 'Toys', icon: 'Gamepad2', color: 'bg-red-500' },
+  { name: 'Электроника', icon: 'Smartphone', color: 'bg-purple-500' },
+  { name: 'Одежда', icon: 'Shirt', color: 'bg-pink-500' },
+  { name: 'Дом и сад', icon: 'Home', color: 'bg-orange-500' },
+  { name: 'Спорт', icon: 'Bike', color: 'bg-blue-500' },
+  { name: 'Книги', icon: 'BookOpen', color: 'bg-green-500' },
+  { name: 'Игрушки', icon: 'Gamepad2', color: 'bg-red-500' },
 ];
 
 const mockListings: ListingItem[] = [
   {
     id: 1,
     title: 'iPhone 13 Pro',
-    category: 'Electronics',
+    category: 'Электроника',
     image: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?w=400',
-    user: 'Alex M.',
+    user: 'Алексей М.',
     userAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Alex',
-    description: 'Great condition, looking to trade for Android flagship',
-    location: 'New York, NY'
+    description: 'Отличное состояние, обменяю на флагман Android',
+    location: 'Москва'
   },
   {
     id: 2,
-    title: 'Vintage Leather Jacket',
-    category: 'Fashion',
+    title: 'Винтажная кожаная куртка',
+    category: 'Одежда',
     image: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400',
-    user: 'Sarah K.',
+    user: 'Сара К.',
     userAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-    description: 'Authentic 80s leather jacket, willing to trade for designer bag',
-    location: 'Los Angeles, CA'
+    description: 'Аутентичная куртка 80-х, обменяю на дизайнерскую сумку',
+    location: 'Санкт-Петербург'
   },
   {
     id: 3,
-    title: 'Mountain Bike',
-    category: 'Sports',
+    title: 'Горный велосипед',
+    category: 'Спорт',
     image: 'https://images.unsplash.com/photo-1576435728678-68d0fbf94e91?w=400',
-    user: 'Mike T.',
+    user: 'Михаил Т.',
     userAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Mike',
-    description: 'Professional mountain bike, open to trades for road bike',
-    location: 'Denver, CO'
+    description: 'Профессиональный горный велосипед, обменяю на шоссейный',
+    location: 'Казань'
   },
   {
     id: 4,
-    title: 'Gaming Console',
-    category: 'Electronics',
+    title: 'Игровая консоль',
+    category: 'Электроника',
     image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=400',
-    user: 'Emma R.',
+    user: 'Эмма Р.',
     userAvatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
-    description: 'PS5 with controllers, looking for Nintendo Switch',
-    location: 'Seattle, WA'
+    description: 'PS5 с контроллерами, обменяю на Nintendo Switch',
+    location: 'Новосибирск'
   },
 ];
 
@@ -86,16 +86,16 @@ const Index = () => {
   const [chatOpen, setChatOpen] = useState(false);
   const [newMessage, setNewMessage] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { id: 1, sender: 'Alex M.', text: 'Hi! Is this still available?', time: '10:30 AM', isMe: false },
-    { id: 2, sender: 'You', text: 'Yes! What would you like to trade?', time: '10:32 AM', isMe: true },
-    { id: 3, sender: 'Alex M.', text: 'I have a Samsung Galaxy S23 in perfect condition', time: '10:35 AM', isMe: false },
+    { id: 1, sender: 'Алексей М.', text: 'Привет! Это еще актуально?', time: '10:30', isMe: false },
+    { id: 2, sender: 'Вы', text: 'Да! Что хотите предложить?', time: '10:32', isMe: true },
+    { id: 3, sender: 'Алексей М.', text: 'У меня есть Samsung Galaxy S23 в идеальном состоянии', time: '10:35', isMe: false },
   ]);
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
       const newMsg: Message = {
         id: messages.length + 1,
-        sender: 'You',
+        sender: 'Вы',
         text: newMessage,
         time: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
         isMe: true
@@ -119,35 +119,35 @@ const Index = () => {
               </h1>
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Browse</a>
-              <a href="#" className="text-sm font-medium hover:text-primary transition-colors">How It Works</a>
+              <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Каталог</a>
+              <a href="#" className="text-sm font-medium hover:text-primary transition-colors">Как это работает</a>
               <Button 
                 variant="ghost" 
                 size="sm"
                 onClick={() => setChatOpen(true)}
               >
                 <Icon name="MessageCircle" size={18} className="mr-2" />
-                Messages
+                Сообщения
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700">
                     <Icon name="Plus" size={18} className="mr-2" />
-                    Post Item
+                    Разместить
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl">
                   <DialogHeader>
-                    <DialogTitle>Post Your Item</DialogTitle>
-                    <DialogDescription>Share what you want to trade with the community</DialogDescription>
+                    <DialogTitle>Разместить объявление</DialogTitle>
+                    <DialogDescription>Расскажите, что хотите обменять</DialogDescription>
                   </DialogHeader>
                   <form className="space-y-4 mt-4">
                     <div className="space-y-2">
-                      <Label htmlFor="title">Item Title</Label>
-                      <Input id="title" placeholder="What are you trading?" />
+                      <Label htmlFor="title">Название</Label>
+                      <Input id="title" placeholder="Что обмениваете?" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="category">Category</Label>
+                      <Label htmlFor="category">Категория</Label>
                       <select 
                         id="category"
                         className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -158,26 +158,26 @@ const Index = () => {
                       </select>
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="description">Description</Label>
+                      <Label htmlFor="description">Описание</Label>
                       <Textarea 
                         id="description" 
-                        placeholder="Describe your item and what you're looking for in exchange"
+                        placeholder="Опишите вашу вещь и что хотите получить взамен"
                         rows={4}
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="location">Location</Label>
-                      <Input id="location" placeholder="City, State" />
+                      <Label htmlFor="location">Местоположение</Label>
+                      <Input id="location" placeholder="Город" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="images">Images</Label>
+                      <Label htmlFor="images">Фотографии</Label>
                       <Input id="images" type="file" multiple accept="image/*" />
                     </div>
                     <Button 
                       type="submit" 
                       className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
                     >
-                      Publish Listing
+                      Опубликовать
                     </Button>
                   </form>
                 </DialogContent>
@@ -192,19 +192,19 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
-              Trade Anything, Everywhere
+              Обменивайте всё и везде
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Join the world's most vibrant barter marketplace. Exchange items you don't need for things you love.
+              Присоединяйтесь к самой яркой площадке для обмена. Меняйте ненужные вещи на то, что вам нравится.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8">
                 <Icon name="Search" size={20} className="mr-2" />
-                Browse Items
+                Смотреть объявления
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 border-2">
                 <Icon name="Play" size={20} className="mr-2" />
-                Watch Demo
+                Видео-инструкция
               </Button>
             </div>
           </div>
@@ -213,7 +213,7 @@ const Index = () => {
 
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center mb-12">Popular Categories</h3>
+          <h3 className="text-3xl font-bold text-center mb-12">Популярные категории</h3>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {categories.map((category, index) => (
               <Card 
@@ -236,9 +236,9 @@ const Index = () => {
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
-            <h3 className="text-3xl font-bold">Recent Listings</h3>
+            <h3 className="text-3xl font-bold">Последние объявления</h3>
             <Button variant="ghost">
-              View All
+              Смотреть все
               <Icon name="ArrowRight" size={18} className="ml-2" />
             </Button>
           </div>
@@ -302,11 +302,11 @@ const Index = () => {
               </div>
               <div className="space-y-4">
                 <div>
-                  <h4 className="font-semibold mb-2">Description</h4>
+                  <h4 className="font-semibold mb-2">Описание</h4>
                   <p className="text-sm text-muted-foreground">{selectedListing.description}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">Owner</h4>
+                  <h4 className="font-semibold mb-2">Владелец</h4>
                   <div className="flex items-center gap-3">
                     <Avatar>
                       <AvatarImage src={selectedListing.userAvatar} />
@@ -329,7 +329,7 @@ const Index = () => {
                   }}
                 >
                   <Icon name="MessageCircle" size={18} className="mr-2" />
-                  Start Chat
+                  Начать чат
                 </Button>
               </div>
             </div>
@@ -340,8 +340,8 @@ const Index = () => {
       <Dialog open={chatOpen} onOpenChange={setChatOpen}>
         <DialogContent className="max-w-2xl h-[600px] flex flex-col p-0">
           <DialogHeader className="px-6 py-4 border-b">
-            <DialogTitle>Chat with Alex M.</DialogTitle>
-            <DialogDescription>Discussing: iPhone 13 Pro</DialogDescription>
+            <DialogTitle>Чат с Алексей М.</DialogTitle>
+            <DialogDescription>Обсуждение: iPhone 13 Pro</DialogDescription>
           </DialogHeader>
           <ScrollArea className="flex-1 px-6 py-4">
             <div className="space-y-4">
@@ -369,7 +369,7 @@ const Index = () => {
           <div className="p-4 border-t">
             <div className="flex gap-2">
               <Input 
-                placeholder="Type your message..."
+                placeholder="Введите сообщение..."
                 value={newMessage}
                 onChange={(e) => setNewMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
@@ -396,31 +396,31 @@ const Index = () => {
                 <span className="font-bold text-lg">Grand Exchange</span>
               </div>
               <p className="text-sm text-gray-400">
-                The world's most trusted barter marketplace
+                Самая надежная площадка для обмена
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Explore</h4>
+              <h4 className="font-semibold mb-4">Каталог</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Browse Items</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Categories</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">How It Works</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Все объявления</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Категории</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Как это работает</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
+              <h4 className="font-semibold mb-4">Поддержка</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Safety Tips</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Центр помощи</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Безопасность</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Контакты</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
+              <h4 className="font-semibold mb-4">Документы</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Community Guidelines</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Условия использования</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Политика конфиденциальности</a></li>
+                <li><a href="#" className="hover:text-white transition-colors">Правила сообщества</a></li>
               </ul>
             </div>
           </div>
