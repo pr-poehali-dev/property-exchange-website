@@ -241,7 +241,8 @@ const Index = () => {
 
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <h3 className="text-3xl font-bold text-center mb-12">Активные объявления</h3>
+          <div className="max-w-3xl mx-auto space-y-6">
             <Card className="border-2 border-primary/20 shadow-lg">
               <CardHeader>
                 <div className="flex items-start justify-between">
@@ -286,6 +287,55 @@ const Index = () => {
                   >
                     <Icon name="MessageCircle" size={18} />
                     @avenvert
+                  </a>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-pink/20 shadow-lg">
+              <CardHeader>
+                <div className="flex items-start justify-between">
+                  <div>
+                    <CardTitle className="text-2xl mb-2">
+                      Игрок shadow_hunter с 1 сервера
+                    </CardTitle>
+                    <Badge className="bg-pink-500">Сервер 1 → Сервер 36</Badge>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Ищет на 36 сервере:</h4>
+                  <p className="text-muted-foreground">
+                    Оружие, бронежилеты, военное снаряжение
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg mb-2">Предлагает в обмен:</h4>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li className="flex items-start gap-2">
+                      <Icon name="Store" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Бизнес в центре города</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Warehouse" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>Склад с ресурсами</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Icon name="Coins" size={18} className="text-pink-600 mt-0.5 flex-shrink-0" />
+                      <span>45кк игровой валюты</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="pt-4 border-t">
+                  <a 
+                    href="https://t.me/shadow_hunter_grad" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
+                  >
+                    <Icon name="MessageCircle" size={18} />
+                    @shadow_hunter_grad
                   </a>
                 </div>
               </CardContent>
