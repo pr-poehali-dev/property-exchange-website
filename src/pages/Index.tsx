@@ -188,13 +188,51 @@ const Index = () => {
               Платформа для безопасного обмена имуществом между серверами мобильной игры GRAD. Меняйте ресурсы, оружие и другие предметы с игроками из других миров.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button size="lg" className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-lg px-8">
+                    <Icon name="Plus" size={20} className="mr-2" />
+                    Опубликовать объявление
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle>Разместить объявление</DialogTitle>
+                    <DialogDescription>Расскажите, что хотите обменять</DialogDescription>
+                  </DialogHeader>
+                  <form className="space-y-4 mt-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="title">Название</Label>
+                      <Input id="title" placeholder="Что обмениваете?" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="description">Описание</Label>
+                      <Textarea 
+                        id="description" 
+                        placeholder="Опишите вашу вещь и что хотите получить взамен"
+                        rows={4}
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="location">Местоположение</Label>
+                      <Input id="location" placeholder="Город" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="images">Фотографии</Label>
+                      <Input id="images" type="file" multiple accept="image/*" />
+                    </div>
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                    >
+                      Опубликовать
+                    </Button>
+                  </form>
+                </DialogContent>
+              </Dialog>
+              <Button size="lg" variant="outline" className="text-lg px-8 border-2">
                 <Icon name="Search" size={20} className="mr-2" />
                 Смотреть объявления
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 border-2">
-                <Icon name="Play" size={20} className="mr-2" />
-                Видео-инструкция
               </Button>
             </div>
           </div>
