@@ -146,17 +146,7 @@ const Index = () => {
                       <Label htmlFor="title">Название</Label>
                       <Input id="title" placeholder="Что обмениваете?" />
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="category">Категория</Label>
-                      <select 
-                        id="category"
-                        className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
-                      >
-                        {categories.map(cat => (
-                          <option key={cat.name} value={cat.name}>{cat.name}</option>
-                        ))}
-                      </select>
-                    </div>
+
                     <div className="space-y-2">
                       <Label htmlFor="description">Описание</Label>
                       <Textarea 
@@ -212,28 +202,6 @@ const Index = () => {
       </section>
 
       <section className="py-16">
-        <div className="container mx-auto px-4">
-          <h3 className="text-3xl font-bold text-center mb-12">Популярные категории</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => (
-              <Card 
-                key={category.name}
-                className="hover:shadow-lg transition-all cursor-pointer hover:-translate-y-1 animate-scale-in border-2 hover:border-primary"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6 text-center">
-                  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
-                    <Icon name={category.icon} className="text-white" size={32} />
-                  </div>
-                  <h4 className="font-semibold">{category.name}</h4>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-3xl font-bold">Последние объявления</h3>
